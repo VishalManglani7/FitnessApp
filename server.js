@@ -1,8 +1,8 @@
 const path = require('path');
 const express = require('express');
-const session = require('express-session');
+const session = require('express-session')
 const exphbs = require('express-handlebars');
-const helpers = require('./utils/helps');
+const helpers = require('./utils/auth');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
