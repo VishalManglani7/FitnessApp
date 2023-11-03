@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', async (req, res) => {
+router.get('/',  async (req, res) => {
   try{
     const workoutData = await Workout.findAll();
     const workouts = workoutData.map((workout) => workouts.get({ plain: true }));
