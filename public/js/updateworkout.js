@@ -7,7 +7,7 @@
 // const workouttype = document.getElementById('workouttype').value;
 
 //     try {
-//         const response = await fetch('/add', {
+//         const response = await fetch('/api/add', {
 //             method: 'POST',
 //             body: JSON.stringify({ date, 
 //                 workoutmins, 
@@ -27,7 +27,7 @@ const newFormHandler = async function(event) {
     const date = document.querySelector('input[name="date"]').value;
     const workout_minutes = document.querySelector('input[name="workoutmins"]').value;
     const workout_type = document.querySelector('input[name="workouttype');
-    await fetch(`/add`, {
+    await fetch(`/api/add`, {
       method: 'POST',
       body: JSON.stringify({
         date,
