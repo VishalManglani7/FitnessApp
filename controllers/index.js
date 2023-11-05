@@ -2,11 +2,11 @@ const router = require('express').Router();
 
 const apiRoutes = require('./api/');
 const homeRoutes = require('./home-routes'); //see progress
-const updateRoutes = require('./update-routes'); //add a workout
+const dashboardRoutes = require('./dashboard-routes');
 
 router.use('/', homeRoutes);
-router.use('/add', updateRoutes);
 router.use('/api', apiRoutes);
+router.use('/workouts', dashboardRoutes)
 
 module.exports = router;
 

@@ -1,16 +1,14 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', async (req, res) => {
-  try{
-    const workoutData = await Workout.findAll();
-    const workouts = workoutData.map((workout) => workouts.get({ plain: true }));
-    // res.json({workouts});
-    res.render('all-workouts', { workouts });
-  }
-
-  catch (err) {
-    res.status(500).json(err);}
+router.get('/', (req, res) => {
+  // Handle the GET request to pull up your workout on the homepage
+  // res.send('Welcome to workout progress!');
+  const message = 'Welcome to workout progress!'
+  res.render( 'home', {
+    layout: 'main',
+    message,
+  });
 });
 
 module.exports = router;
