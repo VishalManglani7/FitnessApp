@@ -10,5 +10,31 @@ router.get('/', (req, res) => {
     message,
   });
 });
+router.get('/login', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/workouts');
+    return;
+  }
+
+  res.render('login');
+});
+
+router.get('/signup', (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect('/workouts');
+    return;
+  }
+
+  res.render('signup');
+});
+
+router.get('/new', (req, res) => {
+  if (!req.session.loggedIn) {
+    res.redirect('/login')
+    return;
+  }
+
+  res.render('workout');
+});
 
 module.exports = router;

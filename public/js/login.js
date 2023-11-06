@@ -15,9 +15,9 @@ const loginFormHandler = async function(event) {
   });
 
   if (response.ok) {
-    document.location.replace('/workouts'); // check
+    document.location.replace('/workouts');
   } else {
-    alert('Failed to login');
+    alert('Oh no! Maybe you typed it in wrong?');
   }
 };
 

@@ -35,7 +35,7 @@ router.get('/', withAuth, async (req, res) => {
       workouts,
     });
   } catch (err) {
-    res.redirect('api/user/login'); // check
+    res.redirect('api/login'); 
   }
 });
 module.exports = router;
