@@ -5,13 +5,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fitness Tracker</title>
-  {{!-- <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet"> --}}
-  {{!-- <link rel="stylesheet" href="/css/style.css"> --}}
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css"> 
 </head>
 
 <body class="flex-column min-100-vh">
   <nav class="navbar">
-    <ul>
+    <ul class="navs">
       <li class="li-inline nav-item"><a href="/">Home</a></li>
       <li class="li-inline nav-item"><a href="/workouts">Workouts</a></li>
       <li class="li-inline nav-item"><a href="/login">Login</a></li>
@@ -20,10 +20,10 @@
     </ul>
   </nav>
   <header class="hero">
-    <h1 class="app-title"><a href="/">Fitness Tracker</a></h1>
+    <h1 class="app-title welcome"><a href="/">Fitness Tracker</a></h1>
   </header>
 
-  <main class="col-auto">
+  <main class="col-auto align-mid">
     {{{body}}}
   </main>
 
