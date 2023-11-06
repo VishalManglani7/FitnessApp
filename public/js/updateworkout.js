@@ -26,7 +26,7 @@ const newFormHandler = async function(event) {
   
     const date = document.querySelector('input[name="date"]').value;
     const workout_minutes = document.querySelector('input[name="workoutmins"]').value;
-    const workout_type = document.querySelector('input[name="workouttype');
+    const workout_type = document.querySelector('input[name="workouttype"]').value;
     await fetch(`/api/add`, {
       method: 'POST',
       body: JSON.stringify({
@@ -37,7 +37,7 @@ const newFormHandler = async function(event) {
       headers: { 'Content-Type': 'application/json' },
     });
   
-    document.location.replace('/');
+    document.location.replace('/workouts');
   };
   
   document
