@@ -1,3 +1,4 @@
+const logger = require('../../utils/logger');
 const router = require('express').Router();
 const { Workout, User } = require('../../models/');
 const withAuth = require('../../utils/auth');
@@ -12,10 +13,14 @@ router.post('/add', withAuth, async (req, res) => {
         workout_type: workout_type,
         UserId: req.session.userId});
         res.json(newWorkout);
+         // use winston to log entry
+        logger.info(`New workout added: Date: ${date}, Minutes: ${workout_minutes}, Type: ${workout_type}`);
 
    } catch (err) {
     console.error('Error adding workout:', err);
     res.status(500).json(err);
+    // use winston to log error
+    logger.error(`Error adding workout: ${err.message}`);
 
    }
 });
