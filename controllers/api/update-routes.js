@@ -2,19 +2,19 @@ const router = require('express').Router();
 const { Workout, User } = require('../../models/');
 const withAuth = require('../../utils/auth');
 
-router.post('/', withAuth, async (req, res) => {
-    const {date, workoutmins, workouttype} = req.body;
+router.post('/add', withAuth, async (req, res) => {
+    console.log("zzz");
+    const {date, workout_minutes, workout_type} = req.body;
     try {
     const newWorkout = await Workout.create({
-        date: date, 
-        workout_minutes: workoutmins, 
-        workout_type: workouttype,
-        userId: req.session.userId});
-        res.json('Adding new workout!');
+        date:date, 
+        workout_minutes: workout_minutes, 
+        workout_type: workout_type,
+        UserId: req.session.userId});
         res.json(newWorkout);
 
    } catch (err) {
-    console.error('Error adding workout:', error);
+    console.error('Error adding workout:', err);
     res.status(500).json(err);
 
    }

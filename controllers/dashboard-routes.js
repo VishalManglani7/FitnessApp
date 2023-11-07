@@ -21,10 +21,11 @@ const { Workout } = require('../models/');
 const withAuth = require('../utils/auth');
 
 router.get('/', withAuth, async (req, res) => {
+
   try {
     const workoutData = await Workout.findAll({
       where: {
-        userId: req.session.userId,
+        UserId: req.session.userId,
       },
     });
 
@@ -35,7 +36,10 @@ router.get('/', withAuth, async (req, res) => {
       workouts,
     });
   } catch (err) {
-    res.redirect('api/login'); 
+    console.log(err);
+     res.redirect('/login'); 
   }
 });
 module.exports = router;
+
+
